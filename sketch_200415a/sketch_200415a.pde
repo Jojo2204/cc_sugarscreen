@@ -7,15 +7,19 @@ void setup()
   direction.y=random(1,max_speed);
   size(600, 600);
   background(100);
-  //fill(255,0,0);
-  //ellipse( width/2, , 50, 50);
-  
 }
 
 void draw()
 {
-  fill(0, 0 ,255);
-  ellipse(pos.x, pos.y, 50, 50);
+  // utiliser background pour nettoyer l'ecran avant de redessiner
+  //background(100);
+  
+  //enlever si background utiliser
+  noStroke();
+  fill(100);
+  ellipse(pos.x, pos.y, 60, 60);
+  
+
   if (pos.x < 0)
   {
     direction.x=+random(1,max_speed);
@@ -38,4 +42,26 @@ void draw()
   }
   pos.y=pos.y+direction.y;
   pos.x=pos.x+direction.x;
+  
+  stroke(0,0,0);
+  fill(0, 0 ,255);
+  ellipse(pos.x, pos.y, 50, 50);
 }
+/*
+class Ball
+{
+  PVector pos;
+  int size;
+  
+  Ball(int _size)
+  {
+    pos = new PVector (width/2, height/2);
+    size = _size;
+  }
+  
+  void display()
+  {
+    
+  }
+}
+*/
